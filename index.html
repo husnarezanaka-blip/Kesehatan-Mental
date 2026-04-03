@@ -1,191 +1,274 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Kesehatan Mental Pasien Hemodialisis</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --primary:#0a5c36;
-  --accent:#1eb86e;
-  --bg:#ffffff;
-  --soft:#f6f8f7;
-  --text:#1a1a1a;
-  --muted:#6b7c72;
+:root {
+  --primary: #0a5c36;
+  --primary-hover: #084c2c;
+  --accent: #1eb86e;
+  --bg-main: #ffffff;
+  --bg-alt: #f4f9f6;
+  --text-dark: #1a1a1a;
+  --text-muted: #5a6b62;
+  --warning: #d9534f;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-
-body{
-  font-family:'Inter',sans-serif;
-  background:var(--bg);
-  color:var(--text);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* NAV */
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:16px 40px;
-  background:rgba(255,255,255,0.85);
-  backdrop-filter:blur(12px);
-  z-index:100;
-  border-bottom:1px solid #eee;
+html {
+  scroll-behavior: smooth;
 }
 
-.nav-logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-.nav-logo img{
-  width:40px;
+/* NAVIGASI */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 5%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  border-bottom: 1px solid #eaeaea;
+  transition: 0.3s;
 }
 
-.nav-logo span{
-  font-weight:600;
-  font-size:0.9rem;
-  color:var(--primary);
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
 }
 
-.nav-links{
-  display:flex;
-  gap:24px;
+.nav-logo img {
+  width: 36px;
+  height: auto;
 }
 
-.nav-links a{
-  text-decoration:none;
-  color:var(--muted);
-  font-size:0.9rem;
+.nav-logo span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--primary);
 }
 
-.nav-links a:hover{
-  color:var(--primary);
+.nav-links {
+  display: flex;
+  gap: 24px;
 }
 
-/* HERO */
-.hero{
-  padding:140px 20px 100px;
-  text-align:center;
-  background:linear-gradient(180deg,#ffffff,#f4f9f6);
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
-.hero img{
-  width:120px;
-  margin-bottom:20px;
+.nav-links a:hover {
+  color: var(--primary);
 }
 
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:2.8rem;
-  color:var(--primary);
-  line-height:1.3;
+/* HERO SECTION */
+.hero {
+  padding: 160px 5% 100px;
+  text-align: center;
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg-alt) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.hero p{
-  margin-top:20px;
-  color:var(--muted);
-  max-width:600px;
-  margin-inline:auto;
-  line-height:1.7;
+.hero img {
+  width: 100px;
+  margin-bottom: 24px;
 }
 
-.btn{
-  margin-top:30px;
-  display:inline-block;
-  padding:12px 28px;
-  border-radius:50px;
-  background:var(--primary);
-  color:white;
-  text-decoration:none;
-  font-size:0.9rem;
-  transition:0.3s;
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  color: var(--primary);
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
 
-.btn:hover{
-  background:#084c2c;
+.hero p {
+  color: var(--text-muted);
+  max-width: 650px;
+  font-size: 1.1rem;
+  margin-bottom: 32px;
 }
 
-/* SECTION */
-.section{
-  padding:80px 20px;
-  max-width:1100px;
-  margin:auto;
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 50px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(10, 92, 54, 0.2);
+  transition: all 0.3s ease;
 }
 
-.section-title{
-  font-family:'Playfair Display',serif;
-  font-size:2rem;
-  color:var(--primary);
-  margin-bottom:10px;
+.btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(10, 92, 54, 0.3);
 }
 
-.section-desc{
-  color:var(--muted);
-  max-width:600px;
+/* GENERAL SECTIONS */
+.section {
+  padding: 80px 5%;
 }
 
-/* CARDS */
-.grid{
-  margin-top:40px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:20px;
+.bg-alt {
+  background-color: var(--bg-alt);
 }
 
-.card{
-  background:white;
-  padding:28px;
-  border-radius:16px;
-  border:1px solid #eee;
-  transition:0.3s;
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+  text-align: center;
 }
 
-.card h3{
-  font-size:1.1rem;
-  color:var(--primary);
-  margin-bottom:10px;
+.section-desc {
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 48px;
+  font-size: 1.05rem;
 }
 
-.card p{
-  font-size:0.9rem;
-  color:var(--muted);
-  line-height:1.6;
+/* CARDS GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
 }
 
-/* LIST */
-.list{
-  margin-top:30px;
+.card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
 }
 
-.list li{
-  margin-bottom:12px;
-  color:var(--muted);
-  line-height:1.6;
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #e2e8e4;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* LIST TANDA GEJALA (NEW DESIGN) */
+.tanda-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.tanda-item {
+  background: #ffffff;
+  border-left: 5px solid var(--warning);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  font-weight: 500;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
 }
 
 /* FOOTER */
-footer{
-  text-align:center;
-  padding:40px;
-  background:#f4f9f6;
-  color:var(--muted);
-  font-size:0.85rem;
+footer {
+  text-align: center;
+  padding: 40px 5%;
+  background: var(--primary);
+  color: #ffffff;
+}
+
+footer p {
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+/* MOBILE RESPONSIVE QUERIES */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+  }
+  
+  .nav-links {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 140px 5% 60px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 60px 5%;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 24px;
+  }
 }
 </style>
 </head>
@@ -194,90 +277,91 @@ footer{
 
 <nav>
   <a href="#" class="nav-logo">
-    <img src="LogoPoltekkes.png">
+    <img src="LogoPoltekkes.png" alt="Logo Poltekkes">
     <span>Poltekkes Semarang</span>
   </a>
 
   <div class="nav-links">
-    <a href="#kenapa">Mengapa</a>
-    <a href="#tanda">Tanda</a>
+    <a href="#kenapa">Mengapa Penting</a>
+    <a href="#tanda">Tanda Gejala</a>
     <a href="#cara">Panduan</a>
   </div>
 </nav>
 
 <section class="hero">
-  <img src="LogoPoltekkes.png">
-
+  <img src="LogoPoltekkes.png" alt="Logo Poltekkes Besar">
   <h1>Kesehatan Mental<br>Pasien Hemodialisis</h1>
-
   <p>
-    Kesehatan mental memiliki peran penting dalam proses penyembuhan pasien hemodialisis.
-    Perawatan bukan hanya tentang fisik, tetapi juga keseimbangan emosional dan psikologis.
+    Kesehatan mental memiliki peran penting dalam proses penyembuhan pasien. 
+    Perawatan hemodialisis bukan hanya tentang fisik, tetapi juga keseimbangan emosional dan psikologis.
   </p>
-
   <a href="#kenapa" class="btn">Pelajari Lebih Lanjut</a>
 </section>
 
 <section class="section" id="kenapa">
-  <h2 class="section-title">Mengapa Penting?</h2>
-  <p class="section-desc">
-    Pasien hemodialisis menghadapi tekanan fisik dan emosional yang besar.
-  </p>
+  <div class="container">
+    <h2 class="section-title">Mengapa Hal Ini Penting?</h2>
+    <p class="section-desc">
+      Pasien hemodialisis menghadapi perubahan gaya hidup, tekanan fisik, dan emosional yang sangat besar secara berkesinambungan.
+    </p>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Tekanan Emosional</h3>
-      <p>Pasien sering mengalami stres, kecemasan, dan kelelahan mental.</p>
-    </div>
-
-    <div class="card">
-      <h3>Kepatuhan Terapi</h3>
-      <p>Kesehatan mental mempengaruhi konsistensi pengobatan.</p>
-    </div>
-
-    <div class="card">
-      <h3>Risiko Komplikasi</h3>
-      <p>Gangguan mental dapat memperburuk kondisi fisik.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Tekanan Emosional</h3>
+        <p>Prosedur medis rutin sering kali menyebabkan stres kronis, kecemasan terhadap masa depan, dan kelelahan mental yang mendalam.</p>
+      </div>
+      <div class="card">
+        <h3>Kepatuhan Terapi</h3>
+        <p>Kondisi psikologis yang stabil sangat mempengaruhi semangat pasien untuk menjaga pola makan dan konsistensi pengobatan.</p>
+      </div>
+      <div class="card">
+        <h3>Risiko Komplikasi</h3>
+        <p>Gangguan mental seperti depresi yang tidak ditangani dapat menurunkan sistem imun dan memperburuk kondisi fisik pasien.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="tanda">
-  <h2 class="section-title">Tanda yang Perlu Diwaspadai</h2>
+<section class="section bg-alt" id="tanda">
+  <div class="container">
+    <h2 class="section-title">Tanda yang Perlu Diwaspadai</h2>
+    <p class="section-desc">Jangan abaikan perubahan kecil pada suasana hati. Kenali tanda-tanda berikut pada diri Anda atau orang terdekat.</p>
 
-  <ul class="list">
-    <li>Perasaan sedih berkepanjangan</li>
-    <li>Kehilangan minat terhadap aktivitas</li>
-    <li>Gangguan tidur dan nafsu makan</li>
-    <li>Rasa cemas berlebihan</li>
-    <li>Pikiran negatif terus-menerus</li>
-  </ul>
+    <div class="tanda-grid">
+      <div class="tanda-item">Perasaan sedih berkepanjangan</div>
+      <div class="tanda-item">Kehilangan minat terhadap aktivitas</div>
+      <div class="tanda-item">Gangguan tidur dan nafsu makan drastis</div>
+      <div class="tanda-item">Rasa cemas dan gelisah berlebihan</div>
+      <div class="tanda-item">Memiliki pikiran negatif terus-menerus</div>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="cara">
-  <h2 class="section-title">Cara Menjaga Kesehatan Mental</h2>
+  <div class="container">
+    <h2 class="section-title">Cara Menjaga Kesehatan Mental</h2>
+    <p class="section-desc">Langkah-langkah praktis yang dapat diterapkan sehari-hari untuk menjaga keseimbangan pikiran.</p>
 
-  <div class="grid">
-    <div class="card">
-      <h3>Komunikasi</h3>
-      <p>Berbagi perasaan dengan tenaga medis atau keluarga.</p>
-    </div>
-
-    <div class="card">
-      <h3>Manajemen Stres</h3>
-      <p>Latihan napas dan relaksasi secara rutin.</p>
-    </div>
-
-    <div class="card">
-      <h3>Dukungan Sosial</h3>
-      <p>Berinteraksi dengan keluarga dan komunitas.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Komunikasi Terbuka</h3>
+        <p>Jangan pendam perasaan Anda. Berbagi cerita dengan tenaga medis, konselor, atau keluarga sangat membantu meringankan beban.</p>
+      </div>
+      <div class="card">
+        <h3>Manajemen Stres</h3>
+        <p>Lakukan teknik relaksasi sederhana seperti latihan pernapasan dalam, meditasi, atau mendengarkan musik menenangkan secara rutin.</p>
+      </div>
+      <div class="card">
+        <h3>Dukungan Sosial</h3>
+        <p>Tetap terhubung dan berinteraksi dengan komunitas pasien, keluarga, dan teman-teman untuk menciptakan lingkungan yang suportif.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  Poltekkes Kemenkes Semarang<br>
-  Edukasi Kesehatan Mental Pasien Hemodialisis
+  <p><strong>Poltekkes Kemenkes Semarang</strong></p>
+  <p>Edukasi Kesehatan Mental Pasien Hemodialisis &copy; 2026</p>
 </footer>
 
 </body>
